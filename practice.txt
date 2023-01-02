@@ -1,0 +1,37 @@
+var express=require("express");
+var app=express();
+var path=require("path");
+var fs=require("fs");
+
+
+app.use(express.static(path.join(__dirname,'public')));
+
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(___dirname + '/index.html'));
+ });
+ console.log("Example app listening at http://localhost:8000");
+app.listen(8000);
+
+
+FROM node:7
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD node app.js
+EXPOSE 8000
+
+
+npm install package
+npm install expressjs
+npm install express
+
+Node app.js
+sudo yum update
+sudo yum install git
+sudo yum install docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo docker bulid -t folderrname .
+sudo docker run -d -p 8000:8000 folder name 
